@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe Box</title>
+</head>
+<body>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"> 
+
+<div class="head">
+ <h1>Recipe Box</h1>
+ <input placeholder="Ingredient|Dish|Region"/>
+ <button id="search">Search</button>
+ </div>
+
+<h3>Click on the images to view the ingredients!</h3>
+<div id="main" class="recipe"></div>
+
+</body>
+ <style type="text/css">
+ 	body {
+  font-family: 'Poiret One', cursive;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+input {
+  width: 280px;
+  height: 33px;
+  margin-left: 15px;
+}
+
+button {
+  width: 200px;
+  height: 35px;
+  border: none;
+  background: #F9DC5C;
+  margin-left: 9px;
+}
+
+h3 {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.recipe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  padding: 10px;
+  grid-gap: 10px;
+  align-items: start;
+ }
+
+.recipe div {
+  margin: 5px auto;
+  background: #F9DC5C;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 88%;
+}
+
+p {
+  margin-left: 10px;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+  }
+
+.expand {
+  max-height: 1500px;
+  overflow: auto;
+  transition: max-height 2s;
+}
+
+
+@media only screen and (min-width: 950px){
+  .recipe {
+    grid-template-columns: repeat(3,1fr);
+    width: 80%;
+    margin: 0 auto;
+  }
+  .recipe div {
+    width: 100%;
+  }
+}
+
+ </style>
+</html>
+
+
